@@ -13,6 +13,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 
+import com.song.sosmessagesendapp.R;
+
 public class MainActivity extends AppCompatActivity {// 인트로로 사용
 
     private static final int GPS_REQUEST_CODE=1001;
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {// 인트로로 사용
         if (requestCode==PERMISSION_REQUEST_CODE){
             if (grantResults.length > 0 && grantResults[0]== PackageManager.PERMISSION_GRANTED && grantResults[1]== PackageManager.PERMISSION_GRANTED ){// 앱 이용 권한이 있을 경우
                 if (isLocationEnabled()) {
-                    Intent intent=new Intent(this, MapActivity.class);
+                    Intent intent=new Intent(this, MapActivity.class);// 지도 화면 이동.
                     startActivity(intent);
                     finish();
                 }else {

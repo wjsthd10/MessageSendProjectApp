@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sosmessagesendapp">
+    package="com.song.sosmessagesendapp">
 
     <uses-permission android:name="android.permission.ACCESS_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
@@ -21,7 +20,7 @@
         android:theme="@style/Theme.SosMessageSendApp">
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.sosmessagesendapp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MapActivity"
+            android:name="com.example.sosmessagesendapp.MapActivity"
             android:exported="false">
 
         </activity>
@@ -39,11 +38,11 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="k0lio77gbx"/>
 
-        <service android:name=".SendSOSForeground"
+        <service android:name="com.example.sosmessagesendapp.SendSOSForeground"
             android:foregroundServiceType="location"
             android:exported="true"/>
 
-        <receiver android:name=".BootCompleteReceiver"
+        <receiver android:name="com.example.sosmessagesendapp.BootCompleteReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
